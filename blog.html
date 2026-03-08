@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuyên Đặng AI Training | Ai Blog</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { colors: { primary: '#007BFF', dark: '#1f2937' } }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Marked.js for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/globals.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 glass shadow-md px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+                <i class="fa-solid fa-brain"></i>
+                <span>ThuyenAI.</span>
+            </a>
+
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link hover:text-primary transition-colors text-gray-600">Trang chủ</a>
+                <a href="about.html" class="nav-link hover:text-primary transition-colors text-gray-600">Về tôi</a>
+                <a href="course.html" class="nav-link hover:text-primary transition-colors text-gray-600">Khóa học</a>
+                <a href="blog.html"
+                    class="nav-link hover:text-primary transition-colors text-blue-600 font-semibold">Blog</a>
+                <a href="contact.html" class="nav-link hover:text-primary transition-colors text-gray-600">Liên hệ</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col items-center py-4 space-y-4 font-medium">
+            <a href="index.html" class="hover:text-primary w-full text-center py-2">Trang chủ</a>
+            <a href="about.html" class="hover:text-primary w-full text-center py-2">Về tôi</a>
+            <a href="course.html" class="hover:text-primary w-full text-center py-2">Khóa học</a>
+            <a href="blog.html" class="hover:text-primary w-full text-center py-2 text-primary">Blog</a>
+            <a href="contact.html" class="hover:text-primary w-full text-center py-2">Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-16">
+        <!-- Page Header -->
+        <section class="bg-white py-16 text-center relative border-b border-gray-100">
+            <div class="max-w-3xl mx-auto px-6 fade-in">
+                <h1 class="text-4xl font-extrabold mb-4 text-gray-900">Chia sẻ kiến thức AI</h1>
+                <p class="text-lg text-gray-600">Cập nhật tin tức, xu hướng mới nhất và các thủ thuật tối ưu ứng dụng AI
+                    trong giảng dạy, công việc.</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Listing / Reading Area -->
+        <section class="py-12 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
+
+            <!-- Main Content Area -->
+            <div class="w-full lg:w-2/3" id="blog-content-area">
+                <!-- Posts Grid Layout -->
+                <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Injected via JS -->
+                </div>
+
+                <!-- Single Post Reading Layout (Hidden by default) -->
+                <div id="single-post-view"
+                    class="hidden bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
+                    <button id="back-to-posts-btn"
+                        class="text-gray-500 hover:text-primary text-sm font-semibold mb-6 flex items-center transition">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Trở về danh sách
+                    </button>
+                    <!-- Featured Image -->
+                    <img id="sp-image" src="" alt="Post image"
+                        class="w-full h-64 md:h-96 object-cover rounded-xl mb-8 shadow-md">
+
+                    <h1 id="sp-title" class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight"></h1>
+                    <div class="flex items-center text-sm text-gray-500 mb-8 pb-8 border-b border-gray-100">
+                        <i class="fa-regular fa-calendar mr-2"></i> <span id="sp-date"></span>
+                        <span class="mx-3">&bull;</span>
+                        <i class="fa-solid fa-pen-nib mr-2"></i> Thuyên Đặng
+                    </div>
+
+                    <!-- Content (Markdown Parsed) -->
+                    <div id="sp-content" class="prose prose-blue max-w-none prose-lg text-gray-700 leading-relaxed">
+                        <!-- Content goes here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="w-full lg:w-1/3 space-y-8">
+                <!-- Search Widget -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-4">Tìm kiếm</h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Nhập từ khóa..."
+                            class="w-full pl-4 pr-10 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                        <button class="absolute right-3 top-3 text-gray-400 hover:text-primary"><i
+                                class="fa-solid fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold mb-4">Chủ đề nổi bật</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-100 cursor-pointer transition">Prompt
+                            Engineering</span>
+                        <span
+                            class="px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-100 cursor-pointer transition">AI
+                            Tools</span>
+                        <span
+                            class="px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium hover:bg-green-100 cursor-pointer transition">Giáo
+                            dục</span>
+                        <span
+                            class="px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-medium hover:bg-orange-100 cursor-pointer transition">Case
+                            Study</span>
+                    </div>
+                </div>
+
+                <!-- Notice CMS -->
+                <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 opacity-20 text-6xl"><i class="fa-solid fa-hammer"></i></div>
+                    <h3 class="text-lg font-bold mb-2 relative z-10">Bạn là Admin?</h3>
+                    <p class="text-blue-100 text-sm mb-4 relative z-10">Trang blog này được quản lý qua LocalStorage.
+                        Đăng nhập trang Admin để thêm/sửa bài viết.</p>
+                    <a href="admin.html"
+                        class="inline-block px-4 py-2 bg-white text-blue-700 font-bold rounded-lg text-sm hover:bg-gray-100 transition relative z-10">Go
+                        to Dashboard</a>
+                </div>
+            </aside>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-8 border-t border-gray-800 text-center">
+        <div class="max-w-7xl mx-auto px-6 text-sm">
+            <p>&copy; <span id="current-year"></span> ThuyenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic & CMS Store -->
+    <script src="js/cms-store.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postsGrid = document.getElementById('posts-grid');
+            const singlePostView = document.getElementById('single-post-view');
+            const backToPostsBtn = document.getElementById('back-to-posts-btn');
+
+            const spTitle = document.getElementById('sp-title');
+            const spDate = document.getElementById('sp-date');
+            const spImage = document.getElementById('sp-image');
+            const spContent = document.getElementById('sp-content');
+
+            // Render Posts List
+            const renderPosts = () => {
+                const posts = window.CMSStore.getBlogPosts();
+                postsGrid.innerHTML = '';
+
+                if (posts.length === 0) {
+                    postsGrid.innerHTML = '<div class="col-span-full text-center py-10 text-gray-500">Chưa có bài viết nào.</div>';
+                    return;
+                }
+
+                posts.forEach((post, index) => {
+                    const card = document.createElement('article');
+                    card.className = 'bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden fade-in flex flex-col h-full';
+                    card.style.animationDelay = `${index * 0.1}s`;
+
+                    // Fallback image if none
+                    const imgUrl = post.image || 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800';
+
+                    card.innerHTML = `
+                        <div class="relative h-48 overflow-hidden group">
+                           <img src="${imgUrl}" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                           <div class="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-0 transition duration-500"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="text-xs text-primary font-bold mb-2 uppercase tracking-wide">${post.date}</div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-primary transition cursor-pointer" onclick="viewPost('${post.id}')">${post.title}</h2>
+                            <p class="text-gray-600 mb-6 line-clamp-3 flex-grow">${post.excerpt}</p>
+                            <button onclick="viewPost('${post.id}')" class="text-primary font-semibold text-sm flex items-center hover:text-blue-800 transition mt-auto">
+                                Đọc tiếp <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </button>
+                        </div>
+                    `;
+                    postsGrid.appendChild(card);
+                });
+            };
+
+            // Global function to view a post
+            window.viewPost = (id) => {
+                const post = window.CMSStore.getBlogPost(id);
+                if (!post) return;
+
+                // Populate data
+                spTitle.textContent = post.title;
+                spDate.textContent = post.date;
+                spImage.src = post.image || 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800';
+
+                // Parse markdown content
+                // Style elements natively for markdown rendering (Prose simulation)
+                const rawHtml = marked.parse(post.content);
+                // Add tiny CSS classes for standard tags parsed by marked just for better viewing
+                let styledHtml = rawHtml
+                    .replace(/<h2>/g, '<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">')
+                    .replace(/<h3>/g, '<h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">')
+                    .replace(/<p>/g, '<p class="mb-4">')
+                    .replace(/<ul>/g, '<ul class="list-disc pl-5 mb-4 space-y-2">')
+                    .replace(/<ol>/g, '<ol class="list-decimal pl-5 mb-4 space-y-2">')
+                    .replace(/<li>/g, '<li class="text-gray-700">')
+                    .replace(/<blockquote>/g, '<blockquote class="border-l-4 border-primary pl-4 italic bg-gray-50 py-2 pr-2 my-6">')
+                    .replace(/<code>/g, '<code class="bg-gray-100 text-red-500 px-1 py-0.5 rounded text-sm">')
+                    .replace(/<pre>/g, '<pre class="bg-gray-900 text-gray-100 p-4 rounded-xl overflow-x-auto mb-6 text-sm">');
+
+                spContent.innerHTML = styledHtml;
+
+                // Toggle views
+                postsGrid.classList.add('hidden');
+                singlePostView.classList.remove('hidden');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            backToPostsBtn.addEventListener('click', () => {
+                singlePostView.classList.add('hidden');
+                postsGrid.classList.remove('hidden');
+            });
+
+            // Initialize
+            renderPosts();
+        });
+    </script>
+</body>
+
+</html>

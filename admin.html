@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuyên Đặng AI | Admin Dashboard</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { colors: { primary: '#007BFF', dark: '#1f2937' } }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- EasyMDE (Simple Markdown Editor) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+
+    <link rel="stylesheet" href="css/globals.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-dark text-white flex flex-col h-full shadow-xl z-20">
+        <div class="p-6 border-b border-gray-700">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+                <i class="fa-solid fa-brain"></i>
+                <span>ThuyenAI.</span>
+            </a>
+            <div class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Admin Dashboard</div>
+        </div>
+
+        <nav class="flex-grow p-4 space-y-2 overflow-y-auto">
+            <button onclick="switchTab('dashboard-tab')" id="nav-dashboard"
+                class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition bg-primary text-white font-medium">
+                <i class="fa-solid fa-chart-line w-5"></i> <span>Tổng quan</span>
+            </button>
+            <button onclick="switchTab('blogs-tab')" id="nav-blogs"
+                class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition text-gray-400 hover:bg-gray-800 hover:text-white">
+                <i class="fa-solid fa-pen-to-square w-5"></i> <span>Quản lý Blog</span>
+            </button>
+            <button onclick="switchTab('videos-tab')" id="nav-videos"
+                class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition text-gray-400 hover:bg-gray-800 hover:text-white">
+                <i class="fa-solid fa-video w-5"></i> <span>Video Khóa học</span>
+            </button>
+        </nav>
+
+        <div class="p-4 border-t border-gray-700">
+            <a href="index.html"
+                class="w-full flex items-center space-x-3 px-4 py-2 rounded-lg text-red-400 hover:bg-gray-800 hover:text-red-300 transition">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Về trang chủ</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow bg-gray-100 flex flex-col h-full overflow-hidden">
+
+        <header class="bg-white shadow-sm px-8 py-4 flex justify-between items-center z-10 w-full">
+            <h2 id="header-title" class="text-2xl font-bold text-gray-800">Tổng quan Dashboard</h2>
+            <div class="flex items-center space-x-4">
+                <div
+                    class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold">
+                    AD
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-grow p-8 overflow-y-auto w-full relative">
+
+            <!-- Dashboard Tab -->
+            <div id="dashboard-tab" class="tab-content block fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                        <div
+                            class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-medium">Tổng số Blog</p>
+                            <h3 id="stat-blogs" class="text-3xl font-bold text-gray-900">0</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                        <div
+                            class="w-14 h-14 bg-red-100 text-red-500 rounded-xl flex items-center justify-center text-2xl">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-medium">Video Khóa học</p>
+                            <h3 id="stat-videos" class="text-3xl font-bold text-gray-900">0</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                        <div
+                            class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-medium">Lượt truy cập (Giả lập)</p>
+                            <h3 class="text-3xl font-bold text-gray-900">1,204</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <i class="fa-solid fa-gauge-high text-6xl text-gray-300 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Hệ thống CMS LocalStorage đang hoạt động</h3>
+                    <p class="text-gray-500">Mọi dữ liệu bạn tạo ở đây sẽ được lưu trữ trong trình duyệt của
+                        bạn.<br>Chúng sẽ hiển thị trên trang chủ ngay lập tức.</p>
+                </div>
+            </div>
+
+            <!-- Blogs Tab -->
+            <div id="blogs-tab" class="tab-content hidden fade-in">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-bold">Danh sách Bài viết</h3>
+                    <button onclick="openBlogEditor()"
+                        class="px-4 py-2 bg-primary text-white rounded-lg shadow font-medium hover:bg-blue-600 transition">
+                        <i class="fa-solid fa-plus mr-2"></i> Viết bài mới
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Tiêu đề</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Ngày đăng</th>
+                                <th
+                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blogs-table-body" class="bg-white divide-y divide-gray-200">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Blog Editor Form (Hidden initially) -->
+                <div id="blog-editor-panel"
+                    class="hidden absolute inset-0 bg-gray-100 p-8 z-20 overflow-y-auto transition-all">
+                    <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                        <div class="flex justify-between items-center mb-6 border-b pb-4">
+                            <h3 id="editor-title" class="text-xl font-bold">Thêm/Sửa Bài Viết</h3>
+                            <button onclick="closeBlogEditor()"
+                                class="text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+                        </div>
+                        <form id="blog-form" onsubmit="saveBlog(event)">
+                            <input type="hidden" id="blog-id">
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Tiêu đề</label>
+                                <input type="text" id="blog-title" required
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Đường dẫn ảnh Thumbnail
+                                    (URL)</label>
+                                <input type="url" id="blog-image"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+                                    placeholder="https://...">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Tóm tắt (Excerpt)</label>
+                                <textarea id="blog-excerpt" required rows="2"
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none resize-none"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nội dung (Markdown)</label>
+                                <textarea id="blog-content"></textarea>
+                            </div>
+                            <div class="flex justify-end space-x-3">
+                                <button type="button" onclick="closeBlogEditor()"
+                                    class="px-6 py-2 border rounded-lg text-gray-600 hover:bg-gray-50 font-medium">Hủy</button>
+                                <button type="submit"
+                                    class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 font-medium shadow-md">Lưu
+                                    Bài Viết</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Tab -->
+            <div id="videos-tab" class="tab-content hidden fade-in">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-bold">Quản lý Video Khóa học</h3>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Add Video Form -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <h4 class="font-bold mb-4">Thêm Video Mới</h4>
+                            <form id="video-form" onsubmit="saveVideo(event)">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Tên Video</label>
+                                    <input type="text" id="video-title" required
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+                                        placeholder="Bài 1: Giới thiệu...">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">YouTube Embed
+                                        URL</label>
+                                    <input type="url" id="video-url" required
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
+                                        placeholder="https://www.youtube.com/embed/...">
+                                </div>
+                                <button type="submit"
+                                    class="w-full px-4 py-2 bg-primary text-white rounded-lg shadow font-medium hover:bg-blue-600 transition">Thêm
+                                    Video</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Video List -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Video</th>
+                                        <th
+                                            class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="videos-table-body" class="bg-white divide-y divide-gray-200">
+                                    <!-- Injected by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal Background -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-10 hidden"></div>
+
+    <!-- Data Store Scripts -->
+    <script src="js/cms-store.js"></script>
+    <!-- Admin JS Logic -->
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

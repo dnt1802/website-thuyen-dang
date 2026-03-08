@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuyên Đặng AI Training | Về tôi</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#007BFF', dark: '#1f2937' }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/globals.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 glass shadow-md px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+                <i class="fa-solid fa-brain"></i>
+                <span>ThuyenAI.</span>
+            </a>
+
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link hover:text-primary transition-colors text-gray-600">Trang chủ</a>
+                <a href="about.html"
+                    class="nav-link hover:text-primary transition-colors text-blue-600 font-semibold">Về tôi</a>
+                <a href="course.html" class="nav-link hover:text-primary transition-colors text-gray-600">Khóa học</a>
+                <a href="blog.html" class="nav-link hover:text-primary transition-colors text-gray-600">Blog</a>
+                <a href="contact.html" class="nav-link hover:text-primary transition-colors text-gray-600">Liên hệ</a>
+            </nav>
+
+            <a href="course.html"
+                class="hidden md:inline-block px-6 py-2 bg-primary text-white rounded-full font-semibold hover:bg-blue-700 transition">Bắt
+                đầu học AI</a>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col items-center py-4 space-y-4 font-medium">
+            <a href="index.html" class="hover:text-primary w-full text-center py-2">Trang chủ</a>
+            <a href="about.html" class="hover:text-primary w-full text-center py-2 text-primary">Về tôi</a>
+            <a href="course.html" class="hover:text-primary w-full text-center py-2">Khóa học</a>
+            <a href="blog.html" class="hover:text-primary w-full text-center py-2">Blog</a>
+            <a href="contact.html" class="hover:text-primary w-full text-center py-2">Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-16">
+        <!-- Page Header -->
+        <section class="bg-primary text-white py-16 text-center relative overflow-hidden">
+            <div
+                class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]">
+            </div>
+            <div class="max-w-4xl mx-auto px-6 relative z-10 fade-in">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Câu chuyện của tôi</h1>
+                <p class="text-xl text-blue-100">Hành trình từ một người yêu công nghệ đến chuyên gia đào tạo AI thực
+                    chiến.</p>
+            </div>
+        </section>
+
+        <!-- Bio & Skills Section -->
+        <section class="py-16 max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <!-- Image -->
+                <div class="w-full md:w-1/2 fade-in">
+                    <img class="lazy rounded-2xl shadow-xl w-full h-auto object-cover max-h-[600px]"
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgNDAwIDYwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YxZjVmOSIvPjwvc3ZnPg=="
+                        data-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                        alt="Thuyên Đặng làm việc">
+                </div>
+                <!-- Content -->
+                <div class="w-full md:w-1/2 fade-in" style="transition-delay: 0.1s;">
+                    <h2 class="text-3xl font-bold mb-6">Xin chào, tôi là Thuyên Đặng 👋</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Với hơn 3 năm đắm chìm trong thế giới Trí tuệ nhân tạo (AI) và các Mô hình ngôn ngữ lớn (LLMs),
+                        tôi nhận ra một sự thật: AI không sinh ra để thay thế con người, mà để giải phóng chúng ta khỏi
+                        những công việc lặp đi lặp lại.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Sứ mệnh của tôi là mang AI đến gần hơn với mọi người, đặc biệt là các giảng viên và chuyên gia,
+                        giúp họ tối ưu hóa 80% thời gian làm việc chỉ bằng những câu lệnh (prompt) đơn giản nhưng đầy
+                        quyền năng.
+                    </p>
+
+                    <!-- Progress Bars -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-semibold text-gray-800">
+                                <span>Prompt Engineering (ChatGPT, Claude)</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-semibold text-gray-800">
+                                <span>AI Workflows Automation</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-semibold text-gray-800">
+                                <span>AI tools for Education</span>
+                                <span>98%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="py-16 bg-white border-t border-gray-100 relative">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 fade-in">Kinh nghiệm chuyên môn</h2>
+
+                <div class="relative border-l-2 border-primary ml-4 md:ml-0 md:mx-auto">
+
+                    <!-- Timeline Item 1 -->
+                    <div class="mb-10 pl-8 relative fade-in">
+                        <div
+                            class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1 border-4 border-white shadow">
+                        </div>
+                        <span class="text-sm text-primary font-bold">2023 - Hiện tại</span>
+                        <h3 class="text-xl font-bold mt-1 text-gray-900">Founder & AI Lead Trainer</h3>
+                        <p class="text-gray-500 font-medium mb-3">ThuyenAI Training</p>
+                        <p class="text-gray-600">Sáng lập trung tâm đào tạo ứng dụng AI. Đã tổ chức hơn 50 khóa học,
+                            giúp hơn 500 cá nhân và doanh nghiệp tối ưu quy trình làm việc bằng ChatGPT và các công cụ
+                            AI khác.</p>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="mb-10 pl-8 relative fade-in" style="transition-delay: 0.1s;">
+                        <div
+                            class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1 border-4 border-white shadow">
+                        </div>
+                        <span class="text-sm text-primary font-bold">2021 - 2023</span>
+                        <h3 class="text-xl font-bold mt-1 text-gray-900">EdTech Project Manager</h3>
+                        <p class="text-gray-500 font-medium mb-3">Tổ chức Giáo dục Quốc tế</p>
+                        <p class="text-gray-600">Quản lý và phát triển các sản phẩm công nghệ giáo dục. Nghiên cứu tích
+                            hợp các giải pháp Machine Learning cơ bản vào hệ thống LMS để cá nhân hoá việc học.</p>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="mb-10 pl-8 relative fade-in" style="transition-delay: 0.2s;">
+                        <div
+                            class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1 border-4 border-white shadow">
+                        </div>
+                        <span class="text-sm text-primary font-bold">2018 - 2021</span>
+                        <h3 class="text-xl font-bold mt-1 text-gray-900">Giảng viên / Chuyên viên Đào tạo</h3>
+                        <p class="text-gray-500 font-medium mb-3">Trường Đại học Công nghệ</p>
+                        <p class="text-gray-600">Thiết kế bài giảng và trực tiếp giảng dạy các môn học về công nghệ
+                            thông tin. Xây dựng phương pháp sư phạm tiếp cận công nghệ mới.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-8 border-t border-gray-800 text-center">
+        <div class="max-w-7xl mx-auto px-6 text-sm">
+            <p>&copy; <span id="current-year"></span> ThuyenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

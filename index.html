@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thuyên Đặng AI Training - Đào tạo AI chuyên sâu, ứng dụng thực chiến trong giảng dạy và công việc.">
+    <title>Thuyên Đặng AI Training | Trang chủ</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Thuyên Đặng AI Training">
+    <meta property="og:description" content="Đào tạo AI chuyên sâu và ứng dụng thực tiễn.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007BFF',
+                        dark: '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/globals.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+    <!-- Header / Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent text-gray-800 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-primary">
+                <i class="fa-solid fa-brain"></i>
+                <span>ThuyenAI.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link hover:text-primary transition-colors">Trang chủ</a>
+                <a href="about.html" class="nav-link hover:text-primary transition-colors">Về tôi</a>
+                <a href="course.html" class="nav-link hover:text-primary transition-colors">Khóa học</a>
+                <a href="blog.html" class="nav-link hover:text-primary transition-colors">Blog</a>
+                <a href="contact.html" class="nav-link hover:text-primary transition-colors">Liên hệ</a>
+            </nav>
+            
+            <a href="course.html" class="hidden md:inline-block px-6 py-2 bg-primary text-white rounded-full font-semibold hover:bg-blue-700 transition shadow-lg transform hover:-translate-y-0.5">
+                Bắt đầu học AI
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 flex flex-col items-center py-4 space-y-4 font-medium">
+            <a href="index.html" class="hover:text-primary w-full text-center py-2">Trang chủ</a>
+            <a href="about.html" class="hover:text-primary w-full text-center py-2">Về tôi</a>
+            <a href="course.html" class="hover:text-primary w-full text-center py-2">Khóa học</a>
+            <a href="blog.html" class="hover:text-primary w-full text-center py-2">Blog</a>
+            <a href="contact.html" class="hover:text-primary w-full text-center py-2">Liên hệ</a>
+            <a href="course.html" class="px-6 py-2 bg-primary text-white rounded-full mt-2">Bắt đầu ngay</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-100 opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-200 opacity-40 blur-3xl"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-12">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left fade-in">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-bold tracking-wider mb-4">CHUYÊN GIA ĐÀO TẠO AI</span>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
+                        Làm chủ trí tuệ nhân tạo. <br>
+                        <span class="text-gradient">Kiến tạo tương lai.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Chào bạn, tôi là Thuyên Đặng. Tôi giúp các giảng viên, chuyên gia và doanh nghiệp tự động hoá công việc và x10 hiệu suất bằng AI thực chiến. Không lý thuyết rườm rà, chỉ có kết quả.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="course.html" class="px-8 py-4 bg-primary text-white font-bold rounded-full w-full sm:w-auto shadow-xl hover:bg-blue-700 transition transform hover:-translate-y-1">
+                            Khám phá khóa học
+                        </a>
+                        <a href="about.html" class="px-8 py-4 bg-white text-gray-800 font-bold rounded-full border border-gray-200 w-full sm:w-auto hover:bg-gray-50 transition">
+                            Tìm hiểu thêm
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="w-full lg:w-1/2 flex justify-center fade-in" style="transition-delay: 0.2s;">
+                    <div class="relative w-72 h-72 lg:w-96 lg:h-96">
+                        <!-- Decorative ring -->
+                        <div class="absolute inset-0 border-4 border-blue-200 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                        <!-- Main image (Placeholder) -->
+                        <img class="lazy absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-full shadow-2xl z-10" 
+                             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2YxZjVmOSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2QxZDVkYiIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QW5oIFRodXllbjwvdGV4dD48L3N2Zz4=" 
+                             data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+                             alt="Thuyên Đặng AI Trainer">
+                        <!-- Floating badges -->
+                        <div class="absolute top-10 -right-5 bg-white p-3 rounded-xl shadow-lg z-20 animate-bounce" style="animation-duration: 3s;">
+                            <i class="fa-solid fa-robot text-2xl text-blue-500"></i>
+                        </div>
+                        <div class="absolute bottom-10 -left-5 bg-white p-3 rounded-xl shadow-lg z-20 animate-bounce" style="animation-duration: 4s;">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-indigo-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-12 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
+                    <div class="fade-in">
+                        <div class="text-4xl font-extrabold text-primary mb-2">500+</div>
+                        <div class="text-sm text-gray-500 font-medium">Học viên</div>
+                    </div>
+                    <div class="fade-in" style="transition-delay: 0.1s;">
+                        <div class="text-4xl font-extrabold text-primary mb-2">50+</div>
+                        <div class="text-sm text-gray-500 font-medium">Khoá học / Workshop</div>
+                    </div>
+                    <div class="fade-in" style="transition-delay: 0.2s;">
+                        <div class="text-4xl font-extrabold text-primary mb-2">98%</div>
+                        <div class="text-sm text-gray-500 font-medium">Hài lòng</div>
+                    </div>
+                    <div class="fade-in" style="transition-delay: 0.3s;">
+                        <div class="text-4xl font-extrabold text-primary mb-2">3+</div>
+                        <div class="text-sm text-gray-500 font-medium">Năm kinh nghiệm AI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Học viên nói gì?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Những chia sẻ chân thực từ những người đã thay đổi cách làm việc nhờ ứng dụng AI.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 fade-in relative">
+                        <i class="fa-solid fa-quote-left absolute top-6 right-6 text-4xl text-blue-100"></i>
+                        <p class="text-gray-600 mb-6 relative z-10 italic">"Tuyệt vời! Tôi đã học được cách sử dụng ChatGPT để lên giáo án chỉ trong 10 phút thay vì 2 tiếng như trước. Thầy Thuyên dạy rất thực tế và dễ hiểu."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                                <img src="https://i.pravatar.cc/150?img=32" alt="Avatar" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Cô Nguyễn Mai</h4>
+                                <span class="text-xs text-blue-600 font-medium">Giáo viên Tiếng Anh</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 fade-in" style="transition-delay: 0.1s;">
+                        <i class="fa-solid fa-quote-left absolute top-6 right-6 text-4xl text-blue-100"></i>
+                        <p class="text-gray-600 mb-6 relative z-10 italic">"Khóa học giúp tôi tự động hoá quy trình viết kịch bản video. Đây là khoản đầu tư tốt nhất của tôi trong năm nay. AI đang thực sự thay đổi luật chơi."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                                <img src="https://i.pravatar.cc/150?img=11" alt="Avatar" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Trần Tuấn Anh</h4>
+                                <span class="text-xs text-blue-600 font-medium">Content Creator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 fade-in" style="transition-delay: 0.2s;">
+                        <i class="fa-solid fa-quote-left absolute top-6 right-6 text-4xl text-blue-100"></i>
+                        <p class="text-gray-600 mb-6 relative z-10 italic">"Cách hướng dẫn từng bước của anh Thuyên giúp một người không rành kỹ thuật như tôi cũng có thể thiết lập các automation bot cho công ty."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                                <img src="https://i.pravatar.cc/150?img=47" alt="Avatar" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Lê Thuỳ Trang</h4>
+                                <span class="text-xs text-blue-600 font-medium">Quản lý Sale & Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 relative overflow-hidden bg-primary">
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="max-w-4xl mx-auto px-6 relative z-10 text-center text-white fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Bạn đã sẵn sàng để đột phá?</h2>
+                <p class="text-xl mb-10 text-blue-100">Đừng để bị tụt hậu lại phía sau. Hãy bắt đầu hành trình làm chủ AI của bạn ngay hôm nay cùng tôi.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="course.html" class="px-8 py-4 bg-white text-primary font-bold rounded-full w-full sm:w-auto shadow-xl hover:bg-gray-100 transition transform hover:-translate-y-1">
+                        Xem danh sách khóa học
+                    </a>
+                    <a href="contact.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full w-full sm:w-auto hover:bg-white/10 transition">
+                        Liên hệ tư vấn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-white mb-4">
+                    <i class="fa-solid fa-brain text-primary"></i>
+                    <span>ThuyenAI.</span>
+                </a>
+                <p class="mb-6 max-w-sm">Chuyên gia đào tạo ứng dụng AI thực chiến. Đam mê chia sẻ kiến thức và công nghệ để nâng tầm cộng đồng.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition cursor-pointer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition cursor-pointer"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition cursor-pointer"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition cursor-pointer"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Liên kết nhanh</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-primary transition">Trang chủ</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition">Về tôi</a></li>
+                    <li><a href="course.html" class="hover:text-primary transition">Khóa học</a></li>
+                    <li><a href="blog.html" class="hover:text-primary transition">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Liên hệ</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-envelope"></i> <span>hello@thuyenai.com</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-phone"></i> <span>0123 456 789</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-location-dot"></i> <span>TP. Hồ Chí Minh, VN</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+            <p>&copy; <span id="current-year"></span> ThuyenAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+</body>
+</html>
